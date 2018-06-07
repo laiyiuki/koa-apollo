@@ -11,6 +11,7 @@ const myGraphQLSchema = require('./schema');
 
 const app = new Koa();
 const router = new Router();
+const PORT = process.env.PORT || 4000;
 
 router.get('/', async ctx => {
   ctx.body = 'Hello World';
@@ -32,4 +33,4 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-app.listen(3000, () => console.log(`Server is running on port 3000`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
